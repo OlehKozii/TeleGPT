@@ -31,7 +31,6 @@ app.listen(port, () => {
   console.log("Експресс працює");
 });
 
-bot.on("polling_error", console.log);
 bot.on("inline_query", async (msg) => {
   await botController.inline(msg);
 });
