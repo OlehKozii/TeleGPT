@@ -22,6 +22,11 @@ app.post(`/bot${process.env.telegramToken}`, (req, res) => {
   res.sendStatus(200);
 });
 
+app.get(`/bot${process.env.telegramToken}`, (req, res) => {
+  bot.processUpdate(req.body);
+  res.sendStatus(200);
+});
+
 app.listen(port, () => {
   console.log("Експресс працює");
 });
