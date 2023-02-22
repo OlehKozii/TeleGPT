@@ -5,7 +5,7 @@ const express = require("express");
 const bot = require("./bot");
 const botController = require("./controller");
 
-var url = "https://tele-gpt.herokuapp.com/";
+var url = "https://tele-gpt.herokuapp.com";
 // url = "https://40bf-178-212-111-36.ngrok.io:443"
 const port = process.env.PORT;
 const app = express();
@@ -17,12 +17,7 @@ bot
 
 app.use(express.json());
 
-app.post(`/bot${process.env.telegramToken}`, (req, res) => {
-  bot.processUpdate(req.body);
-  res.sendStatus(200);
-});
-
-app.get(`/bot${process.env.telegramToken}`, (req, res) => {
+app.post(`bot${process.env.telegramToken}`, (req, res) => {
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
