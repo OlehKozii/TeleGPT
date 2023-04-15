@@ -1,6 +1,6 @@
 const { OpenAIApi, Configuration } = require("openai");
 
-const model = "gpt-3.5-turbo";
+const model = "text-davinci-003";
 
 const config = new Configuration({
   apiKey: process.env.openaiToken,
