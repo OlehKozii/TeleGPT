@@ -4,8 +4,8 @@
   "description": "Telegram bot that sends request to ChatGPT",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production npm run build && nodemon ./dist/index.js",
     "build": "tsc",
+    "start": "NODE_ENV=production nodemon ./dist/index.js",
     "start:dev": "NODE_ENV=development nodemon ./src/index.ts"
   },
   "repository": {
