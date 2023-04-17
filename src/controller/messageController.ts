@@ -51,9 +51,12 @@ class messageController {
       console.log(
         `Message error ${msg.from!.first_name}(@${msg.from!.username}): \n${
           msg.text
-        }\n`
+        }\n${e}`
       );
-      await bot.sendMessage(msg.chat.id, "Error generating response", options);
+      await bot.editMessageText("Error generating response", {
+        chat_id: msg.chat.id,
+        message_id: waitingMessage.message_id,
+      });
     }
   };
 
